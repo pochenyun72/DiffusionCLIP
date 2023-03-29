@@ -1,0 +1,6 @@
+data/
+.idea/
+precomputed
+pretrained/*
+log/
+run.sh

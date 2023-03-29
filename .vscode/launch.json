@@ -1,0 +1,50 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Main",
+            "type": "python",
+            "python": "${command:python.interpreterPath}",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--clip_finetune_eff",
+                "--config",
+                "celeba.yml",
+                "--exp",
+                "./runs/test ",
+                "--edit_attr",
+                "neanderthal",
+                "--do_train",
+                "1",
+                "--do_test",
+                "1",
+                "--n_train_img",
+                "50",
+                "--n_test_img",
+                "10",
+                "--n_iter",
+                "5",
+                "--t_0",
+                "500",
+                "--n_inv_step",
+                "40",
+                "--n_train_step",
+                "6",
+                "--n_test_step",
+                "40",
+                "--lr_clip_finetune",
+                "8e-6",
+                "--id_loss_w",
+                "0",
+                "--l1_loss_w",
+                "1"
+            ]
+        }
+    ]
+}
