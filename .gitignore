@@ -3,5 +3,4 @@ data/
 precomputed
 pretrained/*
 log/
-run.sh
 __pycache__
