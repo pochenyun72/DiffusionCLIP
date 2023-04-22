@@ -1,6 +1,7 @@
 data/
 .idea/
 precomputed
-pretrained/*
+pretrained
 log/
+checkpoint
 __pycache__
