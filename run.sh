@@ -1,29 +1,32 @@
 #!/bin/bash
-arr=("church_department_store")
-configs=("church.yml")
-# t_0n=("400" "500" "600")
-t_0n=("500")
+arrs=(
+    'celeba.yml nicolas      zombie'
+    'afhq.yml   dog_niarrolas   dog_zombie')
+t_0n=("400" "500" "600")
 
-for e in "${arr[@]}"; do
-    for c in "${configs[@]}"; do
-        for ti in "${t_0n[@]}"; do
-            python main.py --clip_finetune \
-                --config "$c" \
+for t in "${t_0n[@]}"; do
+    for i in "${arrs[@]}"; do
+        tmp=($i)
+        config=${tmp[0]}
+        for key in "${tmp[@]:1}"; do
+            python main.py \
+                --clip_finetune \
+                --config "$config" \
                 --exp ./runs/test \
-                --edit_attr "$e" \
+                --edit_attr "$key" \
                 --do_train 1 \
                 --do_test 1 \
                 --n_train_img 50 \
                 --n_test_img 10 \
                 --n_iter 5 \
-                --t_0 "$ti" \
+                --t_0 "$t" \
                 --n_inv_step 40 \
                 --n_train_step 6 \
                 --n_test_step 40 \
                 --lr_clip_finetune 8e-6 \
                 --id_loss_w 0 \
-                --l1_loss_w 1 >>./log/"$e-$c-t0=$ti-500.log"
-            echo "$e $c END!!!"
+                --l1_loss_w 1 >>./log/"$config-$key-t0=$t.log"
+            echo "$config $key $t-END"
         done
     done
 done

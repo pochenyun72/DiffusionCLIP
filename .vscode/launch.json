@@ -20,6 +20,8 @@
                 "./runs/test ",
                 "--edit_attr",
                 "church_department_store",
+                "--model_path",
+                "./pretrained/church_ncsnpp_checkpoint_126.pth",
                 "--do_train",
                 "1",
                 "--do_test",

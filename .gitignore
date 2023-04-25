@@ -5,4 +5,5 @@ pretrained
 log/
 checkpoint
 __pycache__
+runs
 DiffusionCLIP-data.tar
