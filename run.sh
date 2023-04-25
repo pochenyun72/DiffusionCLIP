@@ -1,7 +1,7 @@
 #!/bin/bash
 arrs=(
     'celeba.yml nicolas      zombie'
-    'afhq.yml   dog_niarrolas   dog_zombie')
+    'afhq.yml   dog_nicolas   dog_zombie')
 t_0n=("400" "500" "600")
 
 for t in "${t_0n[@]}"; do
