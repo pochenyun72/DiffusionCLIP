@@ -6,9 +6,10 @@ from torch.utils.data import DataLoader
 import numpy as np
 import cv2
 import lpips
+import argparse
 from skimage.metrics import peak_signal_noise_ratio as psnr_loss
 from skimage.metrics import structural_similarity as ssim_loss
-import argparse
+
 
 parser = argparse.ArgumentParser(
     description='PSNR SSIM script', add_help=False)
